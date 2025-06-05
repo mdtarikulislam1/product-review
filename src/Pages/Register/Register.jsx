@@ -25,13 +25,13 @@ createUser(email,password)
 
 
   return (
-   <div className="hero bg-base-200 min-h-screen">
-  <div className="hero-content flex-col lg:flex-row-reverse">
+   <div className="min-h-screen hero bg-base-200">
+  <div className="flex-col hero-content lg:flex-row-reverse">
     <div className="text-center lg:text-left">
       <Lottie style={{width:300}} loop={true} animationData={registerlottie}></Lottie>
     </div>
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <h1 className='font-bold text-4xl pt-3 text-center'>Register now</h1>
+    <div className="w-full max-w-sm shadow-2xl card bg-base-100 shrink-0">
+        <h1 className='pt-3 text-4xl font-bold text-center regular'>Register now</h1>
       <div className="card-body">
        <form onSubmit={handleregister}>
          <fieldset className="fieldset">
@@ -42,7 +42,7 @@ createUser(email,password)
           <label className="label">Password</label>
           <input name='password' type="password" className="input" placeholder="Password" />
           <div><a className="link link-hover">Forgot password?</a></div>
-          <button type='submit' className="btn btn-neutral mt-4">Register</button>
+          <button type='submit' className="mt-4 btn btn-neutral">Register</button>
         </fieldset>
        </form>
       </div>

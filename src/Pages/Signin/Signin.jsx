@@ -2,6 +2,7 @@ import Lottie from 'lottie-react'
 import React, { use } from 'react'
 import loginanimation from '../../assets/Animation/Login.json'
 import { AuthContext } from '../../Contexts/AuthContext/AuthContext'
+import { NavLink } from 'react-router'
 export default function Signin() {
 
 const {signin}=use(AuthContext)
@@ -20,14 +21,14 @@ signin(email,password)
 }
 
   return (
-   <div className="hero bg-base-200 min-h-screen">
-  <div className="hero-content flex-col lg:flex-row-reverse">
+   <div className="min-h-screen hero bg-base-200">
+  <div className="flex-col hero-content lg:flex-row-reverse">
     <div className="text-center lg:text-left">
      
    <Lottie style={{width:300}} loop={true} animationData={loginanimation}></Lottie>
     </div>
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-         <h1 className="text-3xl font-bold text-center mt-3">Login now!</h1>
+    <div className="w-full max-w-sm shadow-2xl card bg-base-100 shrink-0">
+         <h1 className="mt-3 text-3xl font-bold text-center regular">Login now!</h1>
       <div className="card-body">
       <form onSubmit={handlelogin}>
           <fieldset className="fieldset">
@@ -35,8 +36,9 @@ signin(email,password)
           <input name='email' type="email" className="input" placeholder="Email" />
           <label className="label">Password</label>
           <input name='password' type="password" className="input" placeholder="Password" />
-          <div><a className="link link-hover">Forgot password?</a></div>
-          <button type='submit' className="btn btn-neutral mt-4">Login</button>
+          <button type='submit' className="mt-4 btn btn-neutral">Login</button>
+          <p className='text-xl font-bold text-center'>Or</p>
+         <NavLink to="/register" className=""><button  className="w-full mt-4 btn btn-neutral">Register</button></NavLink>
         </fieldset>
       </form>
       </div>

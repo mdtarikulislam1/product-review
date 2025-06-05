@@ -24,7 +24,7 @@ const fadeInFromLeft = {
  <>
      <div className="px-4 my-8 text-center text-black dark:text-white">
       <motion.h1
-        className="mb-4 text-4xl font-bold md:text-6xl"
+        className="mb-4 text-4xl font-bold md:text-6xl regular"
         variants={fadeInFromLeft}
         initial="hidden"
         whileInView="visible"
@@ -38,7 +38,7 @@ const fadeInFromLeft = {
       </motion.h1>
 
       <motion.p
-        className="text-lg md:text-xl"
+        className="text-lg md:text-xl regular"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}

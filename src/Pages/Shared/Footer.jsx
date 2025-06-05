@@ -2,34 +2,34 @@ import React from 'react'
 import { FaFacebook,FaFacebookMessenger } from "react-icons/fa";
 export default function Footer() {
   return (
-   <footer className="footer sm:footer-horizontal bg-base-300 dark:bg-neutral-800 text-neutral-content p-10">
+   <footer className="p-10 footer sm:footer-horizontal bg-base-300 dark:bg-neutral-800 text-neutral-content">
   <nav>
-    <h6 className=" dark:text-white text-black text-lg">Services</h6>
-    <a className=" dark:text-white text-black text-lg">Branding</a>
-    <a className=" dark:text-white text-black text-lg">Design</a>
-    <a className=" dark:text-white text-black text-lg">Marketing</a>
-    <a className=" dark:text-white text-black text-lg">Advertisement</a>
+    <h6 className="text-lg text-black dark:text-white regular">Services</h6>
+    <a className="text-lg text-black dark:text-white regular">Branding</a>
+    <a className="text-lg text-black dark:text-white regular">Design</a>
+    <a className="text-lg text-black dark:text-white regular">Marketing</a>
+    <a className="text-lg text-black dark:text-white regular">Advertisement</a>
   </nav>
   <nav>
-    <h6 className=" dark:text-white text-black text-lg">Company</h6>
-    <a className=" dark:text-white text-black text-lg">About us</a>
-    <a className=" dark:text-white text-black text-lg">Contact</a>
-    <a className=" dark:text-white text-black text-lg">Jobs</a>
-    <a className=" dark:text-white text-black text-lg">Press kit</a>
+    <h6 className="text-lg text-black dark:text-white regular">Company</h6>
+    <a className="text-lg text-black dark:text-white regular">About us</a>
+    <a className="text-lg text-black dark:text-white regular">Contact</a>
+    <a className="text-lg text-black dark:text-white regular">Jobs</a>
+    <a className="text-lg text-black dark:text-white regular">Press kit</a>
   </nav>
   <nav>
-    <h6 className=" dark:text-white text-black text-lg">Legal</h6>
-    <a className=" dark:text-white text-black text-lg">Terms of use</a>
-    <a className=" dark:text-white text-black text-lg">Privacy policy</a>
-    <a className=" dark:text-white text-black text-lg">Cookie policy</a>
+    <h6 className="text-lg text-black dark:text-white regular">Legal</h6>
+    <a className="text-lg text-black dark:text-white regular">Terms of use</a>
+    <a className="text-lg text-black dark:text-white regular">Privacy policy</a>
+    <a className="text-lg text-black dark:text-white regular">Cookie policy</a>
     <div className='flex gap-2'>
-   <div className='text-black dark:text-white text-3xl'>
+   <div className='text-3xl text-black dark:text-white'>
      <FaFacebook />
    </div>
-   <div className='text-black dark:text-white text-3xl'>
+   <div className='text-3xl text-black dark:text-white'>
     <FaFacebookMessenger />
    </div>
-   <div className='text-black dark:text-white text-3xl'>
+   <div className='text-3xl text-black dark:text-white'>
      <FaFacebook />
    </div>
     </div>

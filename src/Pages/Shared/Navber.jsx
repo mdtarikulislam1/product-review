@@ -27,26 +27,30 @@ const handleSignOut=()=>{
         tabIndex={0}
         className="p-2 mt-3 ml-0 shadow dropdown-content bg-base-100 z-1 w-52">
         <li><NavLink  to='/'>Home</NavLink></li>
-        <li><a>Item 3</a></li>
+        <li><a>Item </a></li>
         <div className="flex flex-col gap-2 md:hidden ">
   {
     user ? (
       <button onClick={handleSignOut} className=''>Log Out</button>
     ) : (
       <>
-        <NavLink to="/register" className="">Register</NavLink>
-        <NavLink to="/signin" className="">Signin</NavLink>
+       <div className='py-2 my-2 text-center text-white bg-black rounded-sm'>
+         <NavLink to="/signin" className="">Login</NavLink>
+       </div>
       </>
     )
   }
 </div>
       </ul>
     </div>
-   <img className='w-20 h-12' src="https://i.postimg.cc/6q6bBVNs/Screenshot-2025-06-03-224450.png" alt="" />
+  
+    <h1 className="ml-3 text-4xl font-bold text-black whitespace-nowrap dark:text-white logo md:ml-0">
+  <span className="hidden text-yellow-600 md:inline">Product </span>Review <span className="hidden text-yellow-600 md:inline"> System</span>
+</h1>
   </div>
   <div className="hidden navbar-center lg:flex">
     <ul className="px-1 menu-horizontal">
-     <li className='text-lg font-semibold dark:text-white'><NavLink className={({ isActive }) =>
+     <li className='text-2xl font-semibold dark:text-white regular'><NavLink className={({ isActive }) =>
       isActive ? "text-yellow-500" : ""
      } to='/'>Home</NavLink></li>
     </ul>
@@ -57,11 +61,8 @@ const handleSignOut=()=>{
   user?<button onClick={handleSignOut} className='btn'>Log Out</button>:
   <>
   <NavLink  className={({ isActive }) =>
-    isActive ? "bg-yellow-400 rounded-md" : ""
-  } to='/register'><button  className='px-4 py-2 border border-yellow-400 rounded-md dark:text-white'>Register</button></NavLink>
-  <NavLink  className={({ isActive }) =>
     isActive ? "bg-yellow-400 ml-2 rounded-md" : ""
-  } to='/signin'><button  className='px-4 py-2 ml-2 border border-yellow-400 rounded-md dark:text-white'>Signin</button></NavLink>
+  } to='/signin'><button  className='px-4 py-2 ml-2 border border-yellow-400 rounded-md dark:text-white'>Login</button></NavLink>
   </>
  }
   </div>
