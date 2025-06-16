@@ -3,6 +3,8 @@ import Rootlayout from "../Layouts/Rootlayout";
 import Home from "../Pages/Home";
 import Register from "../Pages/Register/Register";
 import Signin from "../Pages/Signin/Signin";
+import AddService from "../Pages/AddService/AddService";
+import PrivateRoute from "../Pages/Shared/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -18,8 +20,13 @@ const router = createBrowserRouter([
       Component:Register
     },
     {
-        path:'/signin',
+        path:'/login',
         Component:Signin
+    },
+    {
+      path:'addservice',
+     element: 
+      <AddService></AddService>
     }
    ]
   },

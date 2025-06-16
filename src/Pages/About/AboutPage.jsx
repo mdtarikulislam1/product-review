@@ -19,7 +19,7 @@ export default function AboutPage() {
         className="space-y-4 text-center"
       >
         <h1 className="text-4xl font-bold regular">About Our Service</h1>
-        <p className="max-w-2xl mx-auto text-2xl regular">
+        <p className="max-w-2xl mx-auto text-2xl">
           We provide a transparent and user-friendly review platform to help customers make informed decisions. Explore real feedback and improve your service.
         </p>
       </motion.div>
@@ -39,7 +39,7 @@ export default function AboutPage() {
         />
         <div>
           <h2 className="mb-4 text-3xl font-semibold regular">Our Mission</h2>
-          <p className="text-2xl regular">
+          <p className="text-2xl">
             Our goal is to build trust through honest customer reviews. We empower users to voice their experiences and help businesses grow through transparent feedback.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
               className="p-6 space-y-2 text-center bg-white shadow-md rounded-xl"
             >
               <h3 className="text-3xl font-semibold regular dark:text-black">{title}</h3>
-              <p className="text-2xl text-gray-600 regular">
+              <p className="text-2xl text-gray-600">
                 {title === "Authentic Reviews"
                   ? "Real opinions from real users — no fake feedback."
                   : title === "Verified Users"

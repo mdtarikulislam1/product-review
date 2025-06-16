@@ -27,7 +27,8 @@ const handleSignOut=()=>{
         tabIndex={0}
         className="p-2 mt-3 ml-0 shadow dropdown-content bg-base-100 z-1 w-52">
         <li><NavLink  to='/'>Home</NavLink></li>
-        <li><a>Item </a></li>
+        <li><NavLink  to='/addservice'>AddService</NavLink></li>
+       
         <div className="flex flex-col gap-2 md:hidden ">
   {
     user ? (
@@ -35,7 +36,7 @@ const handleSignOut=()=>{
     ) : (
       <>
        <div className='py-2 my-2 text-center text-white bg-black rounded-sm'>
-         <NavLink to="/signin" className="">Login</NavLink>
+         <NavLink to="/login" className="">Login</NavLink>
        </div>
       </>
     )
@@ -53,6 +54,9 @@ const handleSignOut=()=>{
      <li className='text-2xl font-semibold dark:text-white regular'><NavLink className={({ isActive }) =>
       isActive ? "text-yellow-500" : ""
      } to='/'>Home</NavLink></li>
+     <li className='pl-4 text-2xl font-semibold dark:text-white regular'><NavLink className={({ isActive }) =>
+      isActive ? "text-yellow-500" : ""
+     } to='/addservice'>AddService</NavLink></li>
     </ul>
   </div>
  <div className='navbar-end'>

@@ -16,7 +16,7 @@ const CountSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-10 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl regular"
+          className="mb-10 text-3xl tracking-tight text-gray-900 dark:text-white sm:text-4xl regular"
         >
           Trusted by Our Users
         </motion.h2>
@@ -39,7 +39,7 @@ const CountSection = () => {
                scrollSpyOnce
               />+
               </h3>
-              <p className="mt-2 text-2xl font-medium text-gray-700 dark:text-gray-300 regular">
+              <p className="mt-2 text-2xl font-medium text-gray-700 dark:text-gray-300">
                 {stat.label}
               </p>
             </motion.div>

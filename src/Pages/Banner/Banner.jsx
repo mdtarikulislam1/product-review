@@ -38,7 +38,7 @@ const fadeInFromLeft = {
       </motion.h1>
 
       <motion.p
-        className="text-lg md:text-xl regular"
+        className="text-lg md:text-xl"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
