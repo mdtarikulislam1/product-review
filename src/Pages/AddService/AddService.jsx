@@ -1,11 +1,26 @@
 import React, { use } from 'react'
 import { motion } from 'framer-motion';
 import { AuthContext } from '../../Contexts/AuthContext/AuthContext';
-
+import axios from 'axios';
+import { toast } from 'react-toastify';
 export default function AddService() {
 
   const today = new Date().toLocaleDateString();
   const {user}=use(AuthContext)
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries()); // বড় 'O'
+  console.log(data);
+  axios.post('http://localhost:3000/addService',data)
+  .then(result=>{
+   toast.success('Your Service Added')
+  }).catch(error=>{
+    toast.error(error?.message)
+  })
+};
 
   return (
      <motion.div
@@ -14,7 +29,7 @@ export default function AddService() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-    <form>
+    <form onSubmit={handleSubmit}>
       <h1 className='my-8 text-3xl font-bold text-center text-gray-800 dark:text-gray-300'>Add Service</h1>
       <div className='columns-1 md:columns-2'>
         <div>
@@ -28,7 +43,7 @@ export default function AddService() {
       </div>
         <div>
           <p className='py-2 text-lg text-gray-600 dark:text-gray-400'>Service Title</p>
-        <input className='h-auto p-2 text-gray-900 bg-white rounded-sm dark:bg-gray-800 dark:text-gray-100 w-72 ' type='text' name="service" placeholder='Title'/>
+        <input className='h-auto p-2 text-gray-900 bg-white rounded-sm dark:bg-gray-800 dark:text-gray-100 w-72 ' type='text' name="title" placeholder='Title'/>
       </div>
         <div>
           <p className='py-2 text-lg text-gray-600 dark:text-gray-400'>Description</p>
@@ -43,11 +58,11 @@ export default function AddService() {
       </div>
         <div>
           <p className='py-2 text-lg text-gray-600 dark:text-gray-400'>Website</p>
-        <input className='p-2 bg-white rounded-sm w-72 dark:bg-gray-800 dark:text-gray-100' type="url" name="Website" placeholder='Website'/>
+        <input className='p-2 bg-white rounded-sm w-72 dark:bg-gray-800 dark:text-gray-100' type="url" name="website" placeholder='Website'/>
       </div>
         <div>
           <p className='py-2 text-lg text-gray-600 dark:text-gray-400'>Category</p>
-        <input className='p-2 bg-white rounded-sm w-72 dark:bg-gray-800 dark:text-gray-100' type="text" name="Category" placeholder='Category'/>
+        <input className='p-2 bg-white rounded-sm w-72 dark:bg-gray-800 dark:text-gray-100' type="text" name="category" placeholder='Category'/>
       </div>
         <div>
           <p className='py-2 text-lg text-gray-600 dark:text-gray-400'>Price</p>
@@ -55,12 +70,12 @@ export default function AddService() {
       </div>
         <div>
           <p className='py-2 text-lg text-gray-600 dark:text-gray-400'>Date</p>
-        <input className='p-2 bg-white rounded-sm w-72 dark:bg-gray-800 dark:text-gray-100' type="text" name="imageurl"   value={today}
+        <input className='p-2 bg-white rounded-sm w-72 dark:bg-gray-800 dark:text-gray-100' type="text" name="date"   value={today}
         readOnly/>
       </div>
         <div>
           <p className='py-2 text-lg text-gray-600 dark:text-gray-400'>Email</p>
-        <input className='p-2 bg-white rounded-sm w-72 dark:bg-gray-800 dark:text-gray-100' type="text" name="imageurl"   value={user?.email}
+        <input className='p-2 bg-white rounded-sm w-72 dark:bg-gray-800 dark:text-gray-100' type="text" name="email"   value={user?.email|| ""}
         readOnly />
       </div>
       </div>

@@ -28,11 +28,13 @@ const handleSignOut=()=>{
         className="p-2 mt-3 ml-0 shadow dropdown-content bg-base-100 z-1 w-52">
         <li><NavLink  to='/'>Home</NavLink></li>
         <li><NavLink  to='/addservice'>AddService</NavLink></li>
+        <li><NavLink  to='/allservice'>All Service</NavLink></li>
+
        
         <div className="flex flex-col gap-2 md:hidden ">
   {
     user ? (
-      <button onClick={handleSignOut} className=''>Log Out</button>
+      <button onClick={handleSignOut} className='py-2 my-2 text-center text-white bg-black rounded-sm'>Log Out</button>
     ) : (
       <>
        <div className='py-2 my-2 text-center text-white bg-black rounded-sm'>
@@ -56,7 +58,7 @@ const handleSignOut=()=>{
      } to='/'>Home</NavLink></li>
      <li className='pl-4 text-2xl font-semibold dark:text-white regular'><NavLink className={({ isActive }) =>
       isActive ? "text-yellow-500" : ""
-     } to='/addservice'>AddService</NavLink></li>
+     } to='/allservice'>All Service</NavLink></li>
     </ul>
   </div>
  <div className='navbar-end'>

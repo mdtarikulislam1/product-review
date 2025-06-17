@@ -10,8 +10,8 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
      <Authprovider>
      <RouterProvider router={router}>
-       <ToastContainer />
     </RouterProvider>
+    <ToastContainer />
    </Authprovider>
   
   </StrictMode>,

@@ -3,6 +3,7 @@ import Banner from './Banner/Banner'
 import AboutPage from './About/AboutPage'
 import PartnersSection from './meet/PartnerSection'
 import CountSection from './CountSection/CountSection'
+import ServiceCard from './Home/ServiceCard'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
      <AboutPage></AboutPage>
      <PartnersSection></PartnersSection>
      <CountSection></CountSection>
+     <ServiceCard></ServiceCard>
   </div>
    </>
   )
