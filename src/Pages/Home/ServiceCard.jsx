@@ -10,7 +10,7 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0 },
 };
   useEffect(() => {
-    axios.get('http://localhost:3000/product')
+    axios.get('https://review-system-server-rouge.vercel.app/product')
       .then(response => {
         const limitedServices = response.data.slice(0, 6); // ✅ শুধু প্রথম ৬টা item
         setServices(limitedServices);

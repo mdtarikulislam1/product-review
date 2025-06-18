@@ -12,9 +12,9 @@ const handleSubmit = (e) => {
   e.preventDefault();
   const form = e.target;
   const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries()); // বড় 'O'
+  const data = Object.fromEntries(formData.entries()); 
   console.log(data);
-  axios.post('http://localhost:3000/addService',data)
+  axios.post('https://review-system-server-rouge.vercel.app/addService',data)
   .then(result=>{
    toast.success('Your Service Added')
   }).catch(error=>{

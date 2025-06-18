@@ -8,7 +8,7 @@ const AllService = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/product')
+    axios.get('https://review-system-server-rouge.vercel.app/product')
       .then(response => {
         setServices(response.data);
         setLoading(false);

@@ -7,7 +7,7 @@ export default function Details() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/product/${id}`)
+    fetch(`https://review-system-server-rouge.vercel.app/product/${id}`)
       .then(res => res.json())
       .then(data => {
         setService(data);

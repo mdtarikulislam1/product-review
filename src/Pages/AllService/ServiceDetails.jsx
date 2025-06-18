@@ -17,11 +17,11 @@ const ServiceDetails = () => {
   const [showReviews, setShowReviews] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/services/${id}`)
+    fetch(`https://review-system-server-rouge.vercel.app/services/${id}`)
       .then(res => res.json())
       .then(data => setService(data));
 
-    fetch(`http://localhost:3000/reviews?serviceId=${id}`)
+    fetch(`https://review-system-server-rouge.vercel.app/reviews?serviceId=${id}`)
       .then(res => res.json())
       .then(data => setReviews(data));
   }, [id]);
@@ -39,7 +39,7 @@ const ServiceDetails = () => {
       date: new Date(),
     };
 
-    axios.post(`http://localhost:3000/reviews`, newReview)
+    axios.post(`https://review-system-server-rouge.vercel.app/reviews`, newReview)
       .then(res => {
         if (res.data.insertedId) {
           toast.success("Review added!");

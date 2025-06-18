@@ -13,7 +13,7 @@ const MyServices = () => {
   const [deleteId, setDeleteId] = useState(null);
 console.log(services)
   useEffect(() => {
-    axios.get(`http://localhost:3000/my-services?email=${user.email}`)
+    axios.get(`https://review-system-server-rouge.vercel.app/my-services?email=${user.email}`)
       .then(res => setServices(res.data))
       .catch(err => console.error(err));
   }, [user.email]);
@@ -30,7 +30,7 @@ console.log(services)
     };
 
     try {
-      const res = await axios.patch(`http://localhost:3000/services/${editingService._id}`, updatedService);
+      const res = await axios.patch(`https://review-system-server-rouge.vercel.app/services/${editingService._id}`, updatedService);
       if (res.data.modifiedCount > 0) {
         toast.success("Service updated");
         const updatedList = services.map(service =>
@@ -46,7 +46,7 @@ console.log(services)
 
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(`http://localhost:3000/services/${deleteId}`);
+      const res = await axios.delete(`https://review-system-server-rouge.vercel.app/services/${deleteId}`);
       if (res.data.deletedCount > 0) {
         toast.success("Service deleted");
         setServices(services.filter(service => service._id !== deleteId));
