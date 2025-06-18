@@ -8,11 +8,15 @@ import PrivateRoute from "../Pages/Shared/PrivateRoute";
 import ServiceCard from "../Pages/Home/ServiceCard";
 import AllService from "../Pages/AllService/AllService";
 import ServiceDetails from "../Pages/AllService/ServiceDetails";
+import Details from "../Pages/Home/Details";
+import MyService from "../Pages/myReviews/MyService";
+import NotFound from "../Pages/Shared/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
    Component:Rootlayout,
+    errorElement: <NotFound />,
    children:[
     {
         index:true,
@@ -28,8 +32,9 @@ const router = createBrowserRouter([
     },
     {
       path:'addservice',
-     element: 
+     element:<PrivateRoute>
       <AddService></AddService>
+      </PrivateRoute>
     },
     {
       path:'serviceCard',
@@ -42,6 +47,16 @@ const router = createBrowserRouter([
     {
       path:'/servicedetails/:id',
       Component:ServiceDetails
+    },
+    {
+      path:'/details/:id',
+      Component:Details
+    },
+    {
+      path:'myservice',
+      element:<PrivateRoute>
+        <MyService></MyService>
+      </PrivateRoute>
     }
    ]
   },

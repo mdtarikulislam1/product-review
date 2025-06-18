@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { motion } from "framer-motion";
+import { Link } from 'react-router';
 const ServiceCard = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -44,7 +45,7 @@ const fadeInUp = {
           </p>
          <div className='flex items-center justify-between py-3'>
             <p className='font-medium'>Price ${service?.price}</p>
-            <button className='btn'>Details</button>
+            <Link to={`/details/${service._id}`}><button className='btn'>Details</button></Link>
          </div>
         </div>
       ))}

@@ -20,7 +20,11 @@ const AllService = () => {
   }, []);
 
   if (loading) {
-    return <span className="loading loading-dots loading-xl"></span>
+   return (
+    <div className="flex items-center justify-center min-h-screen">
+      <span className="loading loading-dots loading-xl"></span>
+    </div>
+  );
   }
 
   return (

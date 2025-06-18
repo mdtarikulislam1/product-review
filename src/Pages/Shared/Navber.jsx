@@ -26,9 +26,17 @@ const handleSignOut=()=>{
       <ul
         tabIndex={0}
         className="p-2 mt-3 ml-0 shadow dropdown-content bg-base-100 z-1 w-52">
+        <div className="flex items-center gap-2 avatar">
+    <div className="w-10 rounded-full ring-primary ring-offset-base-100 ring-2 ring-offset-2">
+    <img src={user?.photoURL} />
+    
+    </div>
+     <p className='text-lg font-medium text-yellow-600'>{user?.displayName}</p>
+     </div>
         <li><NavLink  to='/'>Home</NavLink></li>
         <li><NavLink  to='/addservice'>AddService</NavLink></li>
         <li><NavLink  to='/allservice'>All Service</NavLink></li>
+        <li><NavLink  to='/myservice'>My Service</NavLink></li>
 
        
         <div className="flex flex-col gap-2 md:hidden ">
@@ -56,19 +64,33 @@ const handleSignOut=()=>{
      <li className='text-2xl font-semibold dark:text-white regular'><NavLink className={({ isActive }) =>
       isActive ? "text-yellow-500" : ""
      } to='/'>Home</NavLink></li>
-     <li className='pl-4 text-2xl font-semibold dark:text-white regular'><NavLink className={({ isActive }) =>
+     <li className='px-4 text-2xl font-semibold dark:text-white regular'><NavLink className={({ isActive }) =>
+      isActive ? "text-yellow-500" : ""
+     } to='/addservice'>Add Service</NavLink></li>
+     <li className='text-2xl font-semibold dark:text-white regular'><NavLink className={({ isActive }) =>
       isActive ? "text-yellow-500" : ""
      } to='/allservice'>All Service</NavLink></li>
+     <li className='pl-4 text-2xl font-semibold dark:text-white regular'><NavLink className={({ isActive }) =>
+      isActive ? "text-yellow-500" : ""
+     } to='/myservice'>My Service</NavLink></li>
     </ul>
   </div>
  <div className='navbar-end'>
    <div className="hidden md:flex">
  {
-  user?<button onClick={handleSignOut} className='btn'>Log Out</button>:
+  user?<div className='flex items-center gap-4'>
+    <p className='text-2xl font-bold text-yellow-500'>{user?.displayName}</p>
+    <div className="avatar">
+  <div className="w-10 rounded-full ring-primary ring-offset-base-100 ring-2 ring-offset-2">
+    <img src={user?.photoURL} />
+  </div>
+</div>
+    <button onClick={handleSignOut} className='btn'>Log Out</button>
+  </div>:
   <>
   <NavLink  className={({ isActive }) =>
     isActive ? "bg-yellow-400 ml-2 rounded-md" : ""
-  } to='/signin'><button  className='px-4 py-2 ml-2 border border-yellow-400 rounded-md dark:text-white'>Login</button></NavLink>
+  } to='/login'><button  className='px-4 py-2 ml-2 border border-yellow-400 rounded-md dark:text-white'>Login</button></NavLink>
   </>
  }
   </div>

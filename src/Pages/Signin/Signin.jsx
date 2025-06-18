@@ -2,21 +2,24 @@ import Lottie from 'lottie-react'
 import React, { use } from 'react'
 import loginanimation from '../../assets/Animation/Login.json'
 import { AuthContext } from '../../Contexts/AuthContext/AuthContext'
-import { NavLink } from 'react-router'
+import { NavLink, useLocation, useNavigate } from 'react-router'
+import { toast } from 'react-toastify'
 export default function Signin() {
 
 const {signin}=use(AuthContext)
-
+const location = useLocation()
+const navigate = useNavigate()
 const handlelogin=(e)=>{
 e.preventDefault()
 const email = e.target.email.value 
 const password = e.target.password.value 
 signin(email,password)
 .then(result=>{
-  console.log(result)
+toast.success('Login Succesfully')
+navigate(`${location?.state ? location.state : '/'}`)
 })
 .catch(error=>{
-  console.log(error)
+ toast.error(error?.message)
 })
 }
 
