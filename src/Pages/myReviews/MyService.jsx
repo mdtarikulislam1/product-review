@@ -9,7 +9,6 @@ Modal.setAppElement('#root');
 const MyServices = () => {
   const { user } = use(AuthContext)
   const [services, setServices] = useState([]);
-  const [editingService, setEditingService] = useState(null);
   const [deleteId, setDeleteId] = useState(null);
 console.log(services)
   useEffect(() => {
@@ -17,32 +16,6 @@ console.log(services)
       .then(res => setServices(res.data))
       .catch(err => console.error(err));
   }, [user.email]);
-
-  const handleUpdate = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const updatedService = {
-      title: form.title.value,
-      description: form.description.value,
-      price: parseFloat(form.price.value),
-      category: form.category.value,
-      website: form.website.value,
-    };
-
-    try {
-      const res = await axios.patch(`https://review-system-server-rouge.vercel.app/services/${editingService._id}`, updatedService);
-      if (res.data.modifiedCount > 0) {
-        toast.success("Service updated");
-        const updatedList = services.map(service =>
-          service._id === editingService._id ? { ...service, ...updatedService } : service
-        );
-        setServices(updatedList);
-        setEditingService(null);
-      }
-    } catch (err) {
-      toast.error("Update failed");
-    }
-  };
 
   const handleDelete = async () => {
     try {
@@ -79,12 +52,6 @@ console.log(services)
                 <td className="px-4 py-2">{service.category}</td>
                 <td className="px-4 py-2 space-x-2">
                   <button
-                    onClick={() => setEditingService(service)}
-                    className="px-3 py-1 text-white bg-blue-600 rounded hover:bg-blue-700"
-                  >
-                    Update
-                  </button>
-                  <button
                     onClick={() => setDeleteId(service._id)}
                     className="px-3 py-1 text-white bg-red-600 rounded hover:bg-red-700"
                   >
@@ -96,23 +63,6 @@ console.log(services)
           </tbody>
         </table>
       </div>
-
-      <Modal isOpen={!!editingService} onRequestClose={() => setEditingService(null)} className="max-w-lg p-6 mx-auto mt-20 bg-white rounded shadow dark:bg-gray-900">
-        <h3 className="mb-4 text-xl font-semibold">Update Service</h3>
-        {editingService && (
-          <form onSubmit={handleUpdate} className="space-y-4">
-            <input name="title" defaultValue={editingService.title} className="w-full p-2 border rounded dark:bg-gray-800 dark:border-gray-600" required />
-            <textarea name="description" defaultValue={editingService.description} className="w-full p-2 border rounded dark:bg-gray-800 dark:border-gray-600" required />
-            <input name="price" type="number" step="0.01" defaultValue={editingService.price} className="w-full p-2 border rounded dark:bg-gray-800 dark:border-gray-600" required />
-            <input name="category" defaultValue={editingService.category} className="w-full p-2 border rounded dark:bg-gray-800 dark:border-gray-600" required />
-            <input name="website" defaultValue={editingService.website} className="w-full p-2 border rounded dark:bg-gray-800 dark:border-gray-600" />
-            <div className="flex justify-end space-x-3">
-              <button type="button" onClick={() => setEditingService(null)} className="px-4 py-2 bg-gray-300 rounded dark:bg-gray-700">Cancel</button>
-              <button type="submit" className="px-4 py-2 text-white bg-green-600 rounded">Save</button>
-            </div>
-          </form>
-        )}
-      </Modal>
 
       <Modal isOpen={!!deleteId} onRequestClose={() => setDeleteId(null)} className="max-w-sm p-6 mx-auto mt-40 text-center bg-white rounded shadow dark:bg-gray-900">
         <p className="mb-4 text-lg">Are you sure you want to delete this service?</p>

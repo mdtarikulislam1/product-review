@@ -59,7 +59,7 @@ const handleregister = (e) => {
       <Lottie style={{width:300}} loop={true} animationData={registerlottie}></Lottie>
     </div>
     <div className="w-full max-w-sm shadow-2xl card bg-base-100 shrink-0">
-        <h1 className='pt-3 text-4xl font-bold text-center regular'>Register now</h1>
+        <h1 className='pt-3 text-4xl font-bold text-center  '>Register now</h1>
       <div className="card-body">
        <form onSubmit={handleregister}>
          <fieldset className="fieldset">

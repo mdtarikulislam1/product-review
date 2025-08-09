@@ -24,7 +24,7 @@ const fadeInFromLeft = {
  <>
      <div className="px-4 my-8 text-center text-black dark:text-white">
       <motion.h1
-        className="mb-4 text-4xl font-bold md:text-6xl regular"
+        className="mb-4 text-4xl font-bold md:text-6xl  "
         variants={fadeInFromLeft}
         initial="hidden"
         whileInView="visible"

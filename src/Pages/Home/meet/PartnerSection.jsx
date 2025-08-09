@@ -37,8 +37,8 @@ export default function PartnersSection() {
   return (
     <section className="px-4 py-12 md:px-12 bg-gray-50 dark:bg-neutral-800">
       <div className="mb-10 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-white regular">🌟 Meet Our Partners</h2>
-        <p className="mt-2 text-2xl text-gray-500 regular dark:text-white">
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-white  ">🌟 Meet Our Partners</h2>
+        <p className="mt-2 text-2xl text-gray-500   dark:text-white">
           Collaborating with industry leaders to bring you excellence.
         </p>
       </div>
@@ -57,8 +57,8 @@ export default function PartnersSection() {
           src={partner.logo}
          alt={partner.name}
           className="object-contain w-20 h-20 rounded-full"/>
-          <h3 className="text-2xl font-semibold text-gray-800 regular">{partner.name}</h3>
-          <p className="text-xl text-gray-600 regular">{partner.description}</p>
+          <h3 className="text-2xl font-semibold text-gray-800  ">{partner.name}</h3>
+          <p className="text-xl text-gray-600  ">{partner.description}</p>
          </div>
          </div>
 

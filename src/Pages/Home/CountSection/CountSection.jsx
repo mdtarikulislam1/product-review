@@ -16,7 +16,7 @@ const CountSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-10 text-3xl tracking-tight text-gray-900 dark:text-white sm:text-4xl regular"
+          className="mb-10 text-3xl tracking-tight text-gray-900 dark:text-white sm:text-4xl  "
         >
           Trusted by Our Users
         </motion.h2>

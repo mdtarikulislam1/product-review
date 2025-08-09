@@ -21,7 +21,7 @@ export default function Rootlayout() {
   return (
    <>
  <div className=' dark:bg-neutral-800'>
-   <div className='mx-auto max-w-11/12'>
+   <div>
    <Navber></Navber>
    <Outlet></Outlet>
    <Footer></Footer>

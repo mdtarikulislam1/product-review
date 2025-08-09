@@ -12,7 +12,7 @@ const fadeInUp = {
   useEffect(() => {
     axios.get('https://review-system-server-rouge.vercel.app/product')
       .then(response => {
-        const limitedServices = response.data.slice(0, 6); // ✅ শুধু প্রথম ৬টা item
+        const limitedServices = response.data.slice(0, 6); 
         setServices(limitedServices);
         setLoading(false);
       })

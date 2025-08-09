@@ -31,7 +31,7 @@ navigate(`${location?.state ? location.state : '/'}`)
    <Lottie style={{width:300}} loop={true} animationData={loginanimation}></Lottie>
     </div>
     <div className="w-full max-w-sm shadow-2xl card bg-base-100 shrink-0">
-         <h1 className="mt-3 text-3xl font-bold text-center regular">Login now!</h1>
+         <h1 className="mt-3 text-3xl font-bold text-center  ">Login now!</h1>
       <div className="card-body">
       <form onSubmit={handlelogin}>
           <fieldset className="fieldset">

@@ -1,6 +1,5 @@
 import {createBrowserRouter} from "react-router";
 import Rootlayout from "../Layouts/Rootlayout";
-import Home from "../Pages/Home";
 import Register from "../Pages/Register/Register";
 import Signin from "../Pages/Signin/Signin";
 import AddService from "../Pages/AddService/AddService";
@@ -11,6 +10,7 @@ import ServiceDetails from "../Pages/AllService/ServiceDetails";
 import Details from "../Pages/Home/Details";
 import MyService from "../Pages/myReviews/MyService";
 import NotFound from "../Pages/Shared/NotFound";
+import Home from "../Pages/Home/Home";
 
 const router = createBrowserRouter([
   {
