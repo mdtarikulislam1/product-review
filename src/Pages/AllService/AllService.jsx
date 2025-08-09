@@ -28,8 +28,8 @@ const AllService = () => {
   }
 
   return (
-<div className='flex items-center justify-center min-h-[calc(100vh-300px)] my-10'>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+<div className='flex items-center justify-center maxWidth min-h-[calc(100vh-300px)] my-10'>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:mx-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
      {
         services.map((service,index)=><ServiceCard  key={service._id} service={service} index={index}></ServiceCard>)
      }

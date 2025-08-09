@@ -11,6 +11,7 @@ import Details from "../Pages/Home/Details";
 import MyService from "../Pages/myReviews/MyService";
 import NotFound from "../Pages/Shared/NotFound";
 import Home from "../Pages/Home/Home";
+import AboutPage from "../Pages/Home/About/AboutPage";
 
 const router = createBrowserRouter([
   {
@@ -57,7 +58,12 @@ const router = createBrowserRouter([
       element:<PrivateRoute>
         <MyService></MyService>
       </PrivateRoute>
+    },
+    {
+      path:'/about',
+      Component:AboutPage
     }
+
    ]
   },
 ]);

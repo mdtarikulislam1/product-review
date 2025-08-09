@@ -48,26 +48,39 @@ export default function Navber() {
               tabIndex={0}
               className="p-2 mt-3 ml-0 shadow dropdown-content bg-base-100 z-1 w-52"
             >
-              <div className="flex items-center gap-2 avatar">
-                <div className="w-10 rounded-full ring-primary ring-offset-base-100 ring-2 ring-offset-2">
-                  <img src={user?.photoURL} />
+              {!user ? (
+                <div className="flex flex-col items-center justify-center gap-2">
+                  <li>
+                    <NavLink to="/">Home</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/allservice">All Service</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/about">About</NavLink>
+                  </li>
                 </div>
-                <p className="font-medium text-yellow-600">
-                  {user?.displayName}
-                </p>
-              </div>
-              <li>
-                <NavLink to="/">Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/addservice">AddService</NavLink>
-              </li>
-              <li>
-                <NavLink to="/allservice">All Service</NavLink>
-              </li>
-              <li>
-                <NavLink to="/myservice">My Service</NavLink>
-              </li>
+              ) : (
+                <div className="flex flex-col items-center justify-center gap-1">
+                  <img className="rounded-full w-14 h-14" src={user?.photoURL} alt="" />
+                  <p className="text-lg font-semibold">{user?.displayName}</p>
+                  <li>
+                    <NavLink to="/">Home</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/allservice">All Service</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/addservice">AddService</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/myservice">My Service</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/about">About</NavLink>
+                  </li>
+                </div>
+              )}
 
               <div className="flex flex-col gap-2 md:hidden ">
                 {user ? (
@@ -101,7 +114,7 @@ export default function Navber() {
         <div className="hidden navbar-center lg:flex lg:gap-3">
           <ul className="menu-horizontal">
             {!user ? (
-              <div>
+              <div className="flex items-center gap-3">
                 <li className="px-3 font-semibold dark:text-white">
                   <NavLink
                     className={({ isActive }) =>
@@ -124,6 +137,18 @@ export default function Navber() {
                     to="/allservice"
                   >
                     All Service
+                  </NavLink>
+                </li>
+                <li className="font-semibold dark:text-white ">
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-yellow-500 border-yellow-500 border-b-2"
+                        : ""
+                    }
+                    to="/about"
+                  >
+                    About
                   </NavLink>
                 </li>
               </div>
@@ -185,7 +210,7 @@ export default function Navber() {
           <div className="hidden md:flex">
             {user ? (
               <div className="flex items-center gap-4">
-                <p className="text-2xl font-bold text-yellow-500">
+                <p className="text-xl font-bold text-yellow-500">
                   {user?.displayName}
                 </p>
                 <div className="avatar">

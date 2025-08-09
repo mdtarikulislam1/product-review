@@ -55,10 +55,10 @@ const ServiceDetails = () => {
   };
 
   return (
-    <div className="max-w-5xl p-4 mx-auto dark:text-white">
+    <div className="max-w-3xl p-4 mx-auto dark:text-white">
       {service && (
         <div className="mb-10">
-          <img src={service.imageurl} className="object-cover w-full h-64 rounded-xl" alt="Service" />
+          <img src={service.imageurl} className="object-cover max-w-2xl rounded-xl" alt="Service" />
           <h2 className="mt-4 text-3xl font-bold">{service.title}</h2>
           <p className="mt-2">{service.description}</p>
           <p className="mt-1 font-semibold text-green-500">${service.price}</p>

@@ -20,7 +20,7 @@ export default function Rootlayout() {
   }
   return (
    <>
- <div className=' dark:bg-neutral-800'>
+ <div className=' dark:bg-[#343a40]'>
    <div>
    <Navber></Navber>
    <Outlet></Outlet>
