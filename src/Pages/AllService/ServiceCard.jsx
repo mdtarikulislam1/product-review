@@ -18,7 +18,7 @@ const ServiceCard = ({ service}) => {
         <p className="mb-3 text-sm text-gray-600 dark:text-gray-300">
           {description.length > 100 ? description.slice(0, 100) + "..." : description}
         </p>
-        <div className="flex items-center justify-between mb-3 text-sm">
+        <div className="flex items-center justify-between mb-3 text-sm text-white">
           <span className="text-sm font-semibold">
             {category}
           </span>
